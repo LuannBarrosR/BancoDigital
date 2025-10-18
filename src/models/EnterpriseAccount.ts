@@ -6,12 +6,12 @@ export class EnterpriseAccount extends AccountBank{
         super(name, accountNumber)  
     }
 
-    getLoan = () => {
+    getLoan = (): void => {
         console.log("Você pegou um empréstimo!")
     }
 
-    deposit = (): void => {
-        console.log("A empresa depositou!")
+    deposit = (): number => {
+        return 2
     }
 
 }
