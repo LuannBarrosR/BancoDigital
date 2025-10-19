@@ -19,9 +19,12 @@ export abstract class AccountBank{
         return this.name 
     }
 
-    deposit = (): void => {
+    deposit = (value_deposit: number): void => {
         if (this.validate_status()){
-            console.log("Você depositou!")
+
+            this.saldo = this.saldo + value_deposit
+
+            console.log("Você depositou: R$", value_deposit, "\n Você possui agora um saldo dê: R$", this.saldo)
         }
     }
 
