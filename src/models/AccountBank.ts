@@ -1,8 +1,8 @@
 
 export abstract class AccountBank{
     private name: string
-    accountNumber: number
-    saldo: number = 0
+    private readonly accountNumber: number
+    private saldo: number = 0
     status: boolean = true
 
 
@@ -33,11 +33,17 @@ export abstract class AccountBank{
             this.saldo = this.saldo - value_withdraw
             console.log("Você sacou o valor dê: ", value_withdraw, "\n O seu saldo atual é dê: ", this.saldo)
         }
-        
+        else{
+            console.log("Conta não autorizada ou Saldo não suficiente!")
+        }
     }   
 
-    getSaldo = (): void => {
+    getSaldo = (): number => {
         console.log("Este é o seu saldo bancário", this.saldo)
+        return this.saldo
+    }
+    setSaldo = (value_saldo: number): void => {
+        this.saldo = value_saldo
     }
 
     private validate_status = (): boolean =>{
@@ -46,4 +52,8 @@ export abstract class AccountBank{
         }
         throw new Error("Conta inválida")
     }
+
+    getIsValid(): boolean {
+        return this.validate_status();
+  }
 }
