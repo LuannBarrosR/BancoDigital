@@ -13,6 +13,8 @@ console.log("Saldo antes do depósito: ", peopleAccount.getSaldo())
 peopleAccount.deposit(800.00)
 console.log("Saldo depois do depósito: ", peopleAccount.getSaldo())
 peopleAccount.deposit(12.33)
+console.log("------------\n------------\n------------\n")
+peopleAccount.withdraw(123.45)
 
 // const enterpriseAccount: EnterpriseAccount = new EnterpriseAccount('RD7Patrimonial', 6633)
 // console.log(enterpriseAccount)

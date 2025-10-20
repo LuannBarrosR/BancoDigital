@@ -28,9 +28,13 @@ export abstract class AccountBank{
         }
     }
 
-    withdraw = (): void => {
-        console.log("Você sacou!")
-    }
+    withdraw = (value_withdraw: number): void => {
+        if (this.validate_status() && value_withdraw < this.saldo){
+            this.saldo = this.saldo - value_withdraw
+            console.log("Você sacou o valor dê: ", value_withdraw, "\n O seu saldo atual é dê: ", this.saldo)
+        }
+        
+    }   
 
     getSaldo = (): void => {
         console.log("Este é o seu saldo bancário", this.saldo)
