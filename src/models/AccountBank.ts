@@ -1,9 +1,9 @@
 
 export abstract class AccountBank{
-    private name: string
+    private readonly name: string
     private readonly accountNumber: number
     private saldo: number = 0
-    status: boolean = true
+    private status: boolean = true
 
 
     constructor(name: string, accountNumber: number){
@@ -11,10 +11,6 @@ export abstract class AccountBank{
         this.accountNumber = accountNumber
     }
 
-    setName = (name: string): void =>{
-        this.name = name
-        console.log("Nome alterado com sucesso! \n-->:", this.name)
-    }
     getName = (): string => {
         return this.name 
     }
